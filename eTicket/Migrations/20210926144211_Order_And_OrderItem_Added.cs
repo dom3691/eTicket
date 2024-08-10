@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace eTickets.Migrations
+namespace eTicket.Migrations
 {
     public partial class Order_And_OrderItem_Added : Migration
     {

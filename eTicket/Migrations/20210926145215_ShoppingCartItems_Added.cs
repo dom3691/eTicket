@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace eTickets.Migrations
+namespace eTicket.Migrations
 {
     public partial class ShoppingCartItems_Added : Migration
     {
