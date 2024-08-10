@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace eTickets.Migrations
+namespace eTicket.Migrations
 {
     public partial class Initial : Migration
     {

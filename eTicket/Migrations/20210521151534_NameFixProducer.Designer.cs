@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using eTickets.Data;
+using eTicket.Data;
 
-namespace eTickets.Migrations
+namespace eTicket.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     [Migration("20210521151534_NameFixProducer")]
@@ -21,7 +21,7 @@ namespace eTickets.Migrations
                 .HasAnnotation("ProductVersion", "5.0.6")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("eTickets.Models.Actor", b =>
+            modelBuilder.Entity("eTicket.Models.Actor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -42,7 +42,7 @@ namespace eTickets.Migrations
                     b.ToTable("Actors");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Actor_Movie", b =>
+            modelBuilder.Entity("eTicket.Models.Actor_Movie", b =>
                 {
                     b.Property<int>("ActorId")
                         .HasColumnType("int");
@@ -57,7 +57,7 @@ namespace eTickets.Migrations
                     b.ToTable("Actors_Movies");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Cinema", b =>
+            modelBuilder.Entity("eTicket.Models.Cinema", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -78,7 +78,7 @@ namespace eTickets.Migrations
                     b.ToTable("Cinemas");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Movie", b =>
+            modelBuilder.Entity("eTicket.Models.Movie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -121,7 +121,7 @@ namespace eTickets.Migrations
                     b.ToTable("Movies");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Producer", b =>
+            modelBuilder.Entity("eTicket.Models.Producer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -142,15 +142,15 @@ namespace eTickets.Migrations
                     b.ToTable("Producers");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Actor_Movie", b =>
+            modelBuilder.Entity("eTicket.Models.Actor_Movie", b =>
                 {
-                    b.HasOne("eTickets.Models.Actor", "Actor")
+                    b.HasOne("eTicket.Models.Actor", "Actor")
                         .WithMany("Actors_Movies")
                         .HasForeignKey("ActorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("eTickets.Models.Movie", "Movie")
+                    b.HasOne("eTicket.Models.Movie", "Movie")
                         .WithMany("Actors_Movies")
                         .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -161,15 +161,15 @@ namespace eTickets.Migrations
                     b.Navigation("Movie");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Movie", b =>
+            modelBuilder.Entity("eTicket.Models.Movie", b =>
                 {
-                    b.HasOne("eTickets.Models.Cinema", "Cinema")
+                    b.HasOne("eTicket.Models.Cinema", "Cinema")
                         .WithMany("Movies")
                         .HasForeignKey("CinemaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("eTickets.Models.Producer", "Producer")
+                    b.HasOne("eTicket.Models.Producer", "Producer")
                         .WithMany("Movies")
                         .HasForeignKey("ProducerId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -180,22 +180,22 @@ namespace eTickets.Migrations
                     b.Navigation("Producer");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Actor", b =>
+            modelBuilder.Entity("eTicket.Models.Actor", b =>
                 {
                     b.Navigation("Actors_Movies");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Cinema", b =>
+            modelBuilder.Entity("eTicket.Models.Cinema", b =>
                 {
                     b.Navigation("Movies");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Movie", b =>
+            modelBuilder.Entity("eTicket.Models.Movie", b =>
                 {
                     b.Navigation("Actors_Movies");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Producer", b =>
+            modelBuilder.Entity("eTicket.Models.Producer", b =>
                 {
                     b.Navigation("Movies");
                 });

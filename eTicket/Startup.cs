@@ -1,7 +1,7 @@
-using eTickets.Data;
-using eTickets.Data.Cart;
-using eTickets.Data.Services;
-using eTickets.Models;
+using eTicket.Data;
+using eTicket.Data.Cart;
+using eTicket.Data.Services;
+using eTicket.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -17,7 +17,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace eTickets
+namespace eTicket
 {
     public class Startup
     {

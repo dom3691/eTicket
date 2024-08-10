@@ -16,7 +16,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "eTickets": {
+    "eTicket": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace eTickets.Data.Static
+namespace eTicket.Data.Static
 {
     public static class UserRoles
     {

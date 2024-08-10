@@ -1,13 +1,13 @@
-﻿using eTickets.Data.Base;
-using eTickets.Data.ViewModels;
-using eTickets.Models;
+﻿using eTicket.Data.Base;
+using eTicket.Data.ViewModels;
+using eTicket.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace eTickets.Data.Services
+namespace eTicket.Data.Services
 {
     public class MoviesService : EntityBaseRepository<Movie>, IMoviesService
     {

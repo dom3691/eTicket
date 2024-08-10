@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using eTickets.Data;
+using eTicket.Data;
 
-namespace eTickets.Migrations
+namespace eTicket.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     partial class AppDbContextModelSnapshot : ModelSnapshot
@@ -150,7 +150,7 @@ namespace eTickets.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Actor", b =>
+            modelBuilder.Entity("eTicket.Models.Actor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -175,7 +175,7 @@ namespace eTickets.Migrations
                     b.ToTable("Actors");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Actor_Movie", b =>
+            modelBuilder.Entity("eTicket.Models.Actor_Movie", b =>
                 {
                     b.Property<int>("ActorId")
                         .HasColumnType("int");
@@ -190,7 +190,7 @@ namespace eTickets.Migrations
                     b.ToTable("Actors_Movies");
                 });
 
-            modelBuilder.Entity("eTickets.Models.ApplicationUser", b =>
+            modelBuilder.Entity("eTicket.Models.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -258,7 +258,7 @@ namespace eTickets.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Cinema", b =>
+            modelBuilder.Entity("eTicket.Models.Cinema", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -282,7 +282,7 @@ namespace eTickets.Migrations
                     b.ToTable("Cinemas");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Movie", b =>
+            modelBuilder.Entity("eTicket.Models.Movie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -325,7 +325,7 @@ namespace eTickets.Migrations
                     b.ToTable("Movies");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Order", b =>
+            modelBuilder.Entity("eTicket.Models.Order", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -343,7 +343,7 @@ namespace eTickets.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("eTickets.Models.OrderItem", b =>
+            modelBuilder.Entity("eTicket.Models.OrderItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -371,7 +371,7 @@ namespace eTickets.Migrations
                     b.ToTable("OrderItems");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Producer", b =>
+            modelBuilder.Entity("eTicket.Models.Producer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -396,7 +396,7 @@ namespace eTickets.Migrations
                     b.ToTable("Producers");
                 });
 
-            modelBuilder.Entity("eTickets.Models.ShoppingCartItem", b =>
+            modelBuilder.Entity("eTicket.Models.ShoppingCartItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -430,7 +430,7 @@ namespace eTickets.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("eTickets.Models.ApplicationUser", null)
+                    b.HasOne("eTicket.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -439,7 +439,7 @@ namespace eTickets.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("eTickets.Models.ApplicationUser", null)
+                    b.HasOne("eTicket.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -454,7 +454,7 @@ namespace eTickets.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("eTickets.Models.ApplicationUser", null)
+                    b.HasOne("eTicket.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -463,22 +463,22 @@ namespace eTickets.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("eTickets.Models.ApplicationUser", null)
+                    b.HasOne("eTicket.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("eTickets.Models.Actor_Movie", b =>
+            modelBuilder.Entity("eTicket.Models.Actor_Movie", b =>
                 {
-                    b.HasOne("eTickets.Models.Actor", "Actor")
+                    b.HasOne("eTicket.Models.Actor", "Actor")
                         .WithMany("Actors_Movies")
                         .HasForeignKey("ActorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("eTickets.Models.Movie", "Movie")
+                    b.HasOne("eTicket.Models.Movie", "Movie")
                         .WithMany("Actors_Movies")
                         .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -489,15 +489,15 @@ namespace eTickets.Migrations
                     b.Navigation("Movie");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Movie", b =>
+            modelBuilder.Entity("eTicket.Models.Movie", b =>
                 {
-                    b.HasOne("eTickets.Models.Cinema", "Cinema")
+                    b.HasOne("eTicket.Models.Cinema", "Cinema")
                         .WithMany("Movies")
                         .HasForeignKey("CinemaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("eTickets.Models.Producer", "Producer")
+                    b.HasOne("eTicket.Models.Producer", "Producer")
                         .WithMany("Movies")
                         .HasForeignKey("ProducerId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -508,15 +508,15 @@ namespace eTickets.Migrations
                     b.Navigation("Producer");
                 });
 
-            modelBuilder.Entity("eTickets.Models.OrderItem", b =>
+            modelBuilder.Entity("eTicket.Models.OrderItem", b =>
                 {
-                    b.HasOne("eTickets.Models.Movie", "Movie")
+                    b.HasOne("eTicket.Models.Movie", "Movie")
                         .WithMany()
                         .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("eTickets.Models.Order", "Order")
+                    b.HasOne("eTicket.Models.Order", "Order")
                         .WithMany("OrderItems")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -527,36 +527,36 @@ namespace eTickets.Migrations
                     b.Navigation("Order");
                 });
 
-            modelBuilder.Entity("eTickets.Models.ShoppingCartItem", b =>
+            modelBuilder.Entity("eTicket.Models.ShoppingCartItem", b =>
                 {
-                    b.HasOne("eTickets.Models.Movie", "Movie")
+                    b.HasOne("eTicket.Models.Movie", "Movie")
                         .WithMany()
                         .HasForeignKey("MovieId");
 
                     b.Navigation("Movie");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Actor", b =>
+            modelBuilder.Entity("eTicket.Models.Actor", b =>
                 {
                     b.Navigation("Actors_Movies");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Cinema", b =>
+            modelBuilder.Entity("eTicket.Models.Cinema", b =>
                 {
                     b.Navigation("Movies");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Movie", b =>
+            modelBuilder.Entity("eTicket.Models.Movie", b =>
                 {
                     b.Navigation("Actors_Movies");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Order", b =>
+            modelBuilder.Entity("eTicket.Models.Order", b =>
                 {
                     b.Navigation("OrderItems");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Producer", b =>
+            modelBuilder.Entity("eTicket.Models.Producer", b =>
                 {
                     b.Navigation("Movies");
                 });
